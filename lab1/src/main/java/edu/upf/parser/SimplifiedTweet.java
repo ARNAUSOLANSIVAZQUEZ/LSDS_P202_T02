@@ -19,6 +19,7 @@ public class SimplifiedTweet {
 
   public SimplifiedTweet(long tweetId, String text, long userId, String userName,
                          String language, long timestampMs) {
+    // Initialize SimplifiedTweet
     this.tweetId = tweetId;
     this.text = text;
     this.userId = userId;
@@ -26,6 +27,31 @@ public class SimplifiedTweet {
     this.language = language;
     this.timestampMs = timestampMs;
 
+  }
+
+  // Getter methods
+  public long getTweetId() {
+    return tweetId;
+  }
+
+  public String getText() {
+    return text;
+  }
+
+  public long getUserId() {
+    return userId;
+  }
+
+  public String getUserName() {
+    return userName;
+  }
+
+  public String getLanguage() {
+    return language;
+  }
+
+  public long getTimestampMs() {
+    return timestampMs;
   }
 
   /**
@@ -38,33 +64,42 @@ public class SimplifiedTweet {
   public static Optional<SimplifiedTweet> fromJson(String jsonStr) {
 
     try {
+      // Parse JSON string into Tweet object with GSon
       Gson gson = new Gson();
       TweetObject tweetObject = gson.fromJson(jsonStr, TweetObject.class);
-      if (tweetObject != null && tweetObject.getId() != null &&
-              tweetObject.getUser() != null && tweetObject.getUser().getId() != null) {
-        return Optional.of(new SimplifiedTweet(
-                tweetObject.getId(),
-                tweetObject.getText(),
-                tweetObject.getUser().getId(),
-                tweetObject.getUser().getName(),
-                tweetObject.getLang(),
-                tweetObject.getTimestampMs()
-        ));
-      }
+
+      // Check if all fields of tweet object are present
+        if (tweet != null && tweet.id != 0 && tweet.text != null && tweet.user != null && tweet.user.id != 0
+                && tweet.user.name != null && tweet.lang != null && tweet.timestamp_ms != 0) {
+          return Optional.of(new SimplifiedTweet(tweet.id, tweet.text, tweet.user.id, tweet.user.name, tweet.lang,
+                  tweet.timestamp_ms));
+        } else {
+          return Optional.empty(); // Return empty optional if any mandatory field is missing
+        }
     } catch (Exception e) {
-      e.printStackTrace();
+        return Optional.empty();
     }
-    return Optional.empty();
+  }
+
+  // JSON structure of tweet
+  private static class Tweet {
+    long id;
+    String text;
+    User user;
+    String lang;
+    long timestamp_ms;
+  }
+
+  // JSON structure of a user
+  private static class User {
+    long id;
+    String name;
   }
 
 
   @Override
   public String toString() {
-    return "";
-  }
-  //Lo de abajo es lo que pone en el código de la práctica no se cual de los dos es el bueno.
   // Overriding how SimplifiedTweets are printed in console or the output file
   // The following line produces valid JSON as output
-  //return new Gson().toJson(this);
-  //}
+    return new Gson().toJson(this);
 }
