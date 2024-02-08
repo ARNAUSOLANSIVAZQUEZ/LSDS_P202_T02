@@ -23,8 +23,8 @@ public class FileLanguageFilter implements LanguageFilter {
         try (BufferedReader reader = new BufferedReader(new FileReader(inputFile));
              BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
             String line;
-            // Each line is parsed into a optional SimplifiedTweet, using the fromJson method of SimplifiedTweet class
             while ((line = reader.readLine()) != null) {
+                // Each line is parsed into a optional SimplifiedTweet, using the fromJson method of SimplifiedTweet class
                 Optional<SimplifiedTweet> optionalTweet = SimplifiedTweet.fromJson(line);
                 // Check if a tweet is present in the line
                 if (optionalTweet.isPresent()) {
