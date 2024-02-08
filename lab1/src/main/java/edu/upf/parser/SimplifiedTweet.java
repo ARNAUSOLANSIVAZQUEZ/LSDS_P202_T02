@@ -5,9 +5,6 @@ import com.google.gson.Gson;
 
 public class SimplifiedTweet {
 
-  // All classes use the same instance
-  private static JsonParser parser = new JsonParser();
-
 
   private final long tweetId;              // the id of the tweet ('id')
   private final String text;              // the content of the tweet ('text')
@@ -65,7 +62,7 @@ public class SimplifiedTweet {
     try {
       // Parse JSON string into Tweet object with GSon
       Gson gson = new Gson();
-      TweetObject tweetObject = gson.fromJson(jsonStr, TweetObject.class);
+      Tweet tweet = gson.fromJson(jsonStr, Tweet.class);
 
       // Check if all fields of tweet object are present
       if (tweet != null && tweet.id != 0 && tweet.text != null && tweet.user != null && tweet.user.id != 0
