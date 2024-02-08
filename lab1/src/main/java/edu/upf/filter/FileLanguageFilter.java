@@ -1,5 +1,7 @@
 package edu.upf.filter;
 
+import edu.upf.parser.SimplifiedTweet;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
