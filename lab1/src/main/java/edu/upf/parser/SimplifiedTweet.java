@@ -9,13 +9,12 @@ public class SimplifiedTweet {
   private static JsonParser parser = new JsonParser();
 
 
-
-  private final long tweetId;			  // the id of the tweet ('id')
-  private final String text;  		      // the content of the tweet ('text')
-  private final long userId;			  // the user id ('user->id')
-  private final String userName;		  // the user name ('user'->'name')
+  private final long tweetId;              // the id of the tweet ('id')
+  private final String text;              // the content of the tweet ('text')
+  private final long userId;              // the user id ('user->id')
+  private final String userName;          // the user name ('user'->'name')
   private final String language;          // the language of a tweet ('lang')
-  private final long timestampMs;		  // seconduserIds from epoch ('timestamp_ms')
+  private final long timestampMs;          // seconduserIds from epoch ('timestamp_ms')
 
   public SimplifiedTweet(long tweetId, String text, long userId, String userName,
                          String language, long timestampMs) {
@@ -69,15 +68,15 @@ public class SimplifiedTweet {
       TweetObject tweetObject = gson.fromJson(jsonStr, TweetObject.class);
 
       // Check if all fields of tweet object are present
-        if (tweet != null && tweet.id != 0 && tweet.text != null && tweet.user != null && tweet.user.id != 0
-                && tweet.user.name != null && tweet.lang != null && tweet.timestamp_ms != 0) {
-          return Optional.of(new SimplifiedTweet(tweet.id, tweet.text, tweet.user.id, tweet.user.name, tweet.lang,
-                  tweet.timestamp_ms));
-        } else {
-          return Optional.empty(); // Return empty optional if any mandatory field is missing
-        }
+      if (tweet != null && tweet.id != 0 && tweet.text != null && tweet.user != null && tweet.user.id != 0
+              && tweet.user.name != null && tweet.lang != null && tweet.timestamp_ms != 0) {
+        return Optional.of(new SimplifiedTweet(tweet.id, tweet.text, tweet.user.id, tweet.user.name, tweet.lang,
+                tweet.timestamp_ms));
+      } else {
+        return Optional.empty(); // Return empty optional if any mandatory field is missing
+      }
     } catch (Exception e) {
-        return Optional.empty();
+      return Optional.empty();
     }
   }
 
@@ -99,7 +98,9 @@ public class SimplifiedTweet {
 
   @Override
   public String toString() {
-  // Overriding how SimplifiedTweets are printed in console or the output file
-  // The following line produces valid JSON as output
+    // Overriding how SimplifiedTweets are printed in console or the output file
+    // The following line produces valid JSON as output
     return new Gson().toJson(this);
+  }
 }
+
