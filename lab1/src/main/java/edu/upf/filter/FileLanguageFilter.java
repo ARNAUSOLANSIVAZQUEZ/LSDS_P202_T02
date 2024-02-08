@@ -1,3 +1,5 @@
+package edu.upf.filter;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -17,7 +19,7 @@ public class FileLanguageFilter implements LanguageFilter {
     }
 
     // Implementation of filterLanguage method
-    @Override1
+    @Override
     public void filterLanguage(String language) throws Exception {
         // We use a reader buffer to read lines from input file and a writer buffer to write to the output file
         try (BufferedReader reader = new BufferedReader(new FileReader(inputFile));
