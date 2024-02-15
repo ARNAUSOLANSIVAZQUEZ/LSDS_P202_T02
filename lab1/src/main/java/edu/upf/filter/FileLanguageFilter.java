@@ -22,7 +22,7 @@ public class FileLanguageFilter implements LanguageFilter {
 
     // Implementation of filterLanguage method
     @Override
-    public void filterLanguage(String language) throws Exception {
+    public void filterLanguage(String language) throws IOException {
         // We use a reader buffer to read lines from input file and a writer buffer to write to the output file
         try (BufferedReader reader = new BufferedReader(new FileReader(inputFile));
              BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
@@ -42,7 +42,7 @@ public class FileLanguageFilter implements LanguageFilter {
             }
             // If an error occur during the reading/writing process, throws an exception
         } catch (IOException e) {
-            throw new Exception("Error reading/writing files", e);
+            throw new IOException("Error reading/writing files", e);
         }
     }
 }
