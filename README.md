@@ -6,8 +6,8 @@ Total processing time (filter + upload)
 
 
 Specs for U161668:
--RAM: MemTotal: 32516032 kB
--CPU: 12th Gen Intel(R) Core(TM) i7-12700H , cpu MHz: 892.349, cpu cores: 14
+	- RAM: MemTotal: 32516032 kB ~ 31GB
+	- CPU: 12th Gen Intel(R) Core(TM) i7-12700H , cpu MHz: 892.349, cpu cores: 14
 
 
 
