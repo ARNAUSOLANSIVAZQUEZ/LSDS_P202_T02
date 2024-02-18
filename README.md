@@ -9,8 +9,9 @@ To execute our submission, one must run the jar, with the json archives to be pr
 
 - To filter tweets in English across all files:
 
+'''
 java -cp lab1-1.0-SNAPSHOT.jar edu.upf.TwitterFilter en /tmp/output-en.txt |s3-bucket-name| Eurovision3.json Eurovision4.json Eurovision5.json Eurovision6.json Eurovision7.json Eurovision8.json Eurovision9.json Eurovision10.json
-
+'''
 - To filter tweets in Spanish across all files:
 
 java -cp lab1-1.0-SNAPSHOT.jar edu.upf.TwitterFilter es /tmp/output-es.txt |s3-bucket-name| Eurovision3.json Eurovision4.json Eurovision5.json Eurovision6.json Eurovision7.json Eurovision8.json Eurovision9.json Eurovision10.json
