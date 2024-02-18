@@ -1,3 +1,15 @@
+Benchmarks follow the format:
+
+File processed || Language filtered || Number of tweets filtered || Time elapsed
+
+Total processing time (filter + upload)
+
+
+Specs for U161668:
+-RAM: MemTotal: 32516032 kB
+-CPU: 12th Gen Intel(R) Core(TM) i7-12700H , cpu MHz: 892.349, cpu cores: 14
+
+
 
 
 	 ____________________________________________________
@@ -27,4 +39,18 @@
 	|Eurovision10.json || es || 169659 || 0 h 00 m 09 s  |
 	|----------------------------------------------------|
 	|Total time elapsed Twitter Filtering:  0 h 03 m 53 s|
+	|____________________________________________________|
+	 ____________________________________________________
+	|BENCHMARK - CATALAN - U161668			     |
+	|----------------------------------------------------|
+	|Eurovision3.json || ca || 242 || 0 h 00 m 01 s      |
+	|Eurovision4.json || ca || 983 || 0 h 00 m 05 s      |
+	|Eurovision5.json || ca || 581 || 0 h 00 m 02 s      |
+	|Eurovision6.json || ca || 717 || 0 h 00 m 03 s      |
+	|Eurovision7.json || ca || 398 || 0 h 00 m 02 s      |
+	|Eurovision8.json || ca || 404 || 0 h 00 m 02 s      |
+	|Eurovision9.json || ca || 193 || 0 h 00 m 01 s      |
+	|Eurovision10.json || ca || 1065 || 0 h 00 m 09 s    |
+	|----------------------------------------------------|
+	|Total time elapsed Twitter Filtering:  0 h 00 m 33 s|
 	|____________________________________________________|
