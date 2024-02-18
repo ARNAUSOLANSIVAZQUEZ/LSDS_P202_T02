@@ -1,3 +1,31 @@
+This submission is for group P202-02 formed by:
+- Muñoz, Mario U172951
+- Solans, Arnau U161668
+- Villarino, Jorge U172789
+
+To execute our submission, one must run the jar, with the json archives to be processed in the same directory, with the following commands:
+
+- To filter tweets in English across all files:
+
+java -cp lab1-1.0-SNAPSHOT.jar edu.upf.TwitterFilter en /tmp/output-en.txt <s3-bucket-name> Eurovision3.json Eurovision4.json Eurovision5.json Eurovision6.json Eurovision7.json Eurovision8.json Eurovision9.json Eurovision10.json
+
+- To filter tweets in Spanish across all files:
+
+java -cp lab1-1.0-SNAPSHOT.jar edu.upf.TwitterFilter es /tmp/output-es.txt <s3-bucket-name> Eurovision3.json Eurovision4.json Eurovision5.json Eurovision6.json Eurovision7.json Eurovision8.json Eurovision9.json Eurovision10.json
+
+- To filter tweets in Catalan across all files:
+
+java -cp lab1-1.0-SNAPSHOT.jar edu.upf.TwitterFilter ca /tmp/output-ca.txt <s3-bucket-name> Eurovision3.json Eurovision4.json Eurovision5.json Eurovision6.json Eurovision7.json Eurovision8.json Eurovision9.json Eurovision10.json
+
+- In general:
+
+java -cp lab1-1.0-SNAPSHOT.jar edu.upf.TwitterFilter <language> <output-directory>.txt <s3-bucket-name> <files-to-process>
+
+Results obtained are:
+- English: 446603 tweets filtered.
+- Spanish: 509435 tweets filtered
+- Catalan: 4583 tweets filtered.
+
 Benchmarks follow the format:
 
 File processed || Language filtered || Number of tweets filtered || Time elapsed
