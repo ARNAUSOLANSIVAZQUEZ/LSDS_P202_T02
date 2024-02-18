@@ -3,7 +3,7 @@ This submission is for group P202-02 formed by:
 - Solans, Arnau U161668
 - Villarino, Jorge U172789
 
-#User's Manual
+# User's Manual
 
 To execute our submission, one must run the jar, with the json archives to be processed in the same directory, with the following commands:
 
@@ -24,7 +24,7 @@ java -cp lab1-1.0-SNAPSHOT.jar edu.upf.TwitterFilter ca /tmp/output-ca.txt <s3-b
 java -cp lab1-1.0-SNAPSHOT.jar edu.upf.TwitterFilter <language> <output-directory>.txt <s3-bucket-name> <files-to-process>
 
 
-#Results
+# Results
 
 Results obtained are:
 - English: 446603 tweets filtered.
@@ -32,7 +32,7 @@ Results obtained are:
 - Catalan: 4583 tweets filtered.
 
 
-#Benchmark
+# Benchmark
 
 Benchmarks are done with the library java.time.LocalTime, the benchmark has been performed for the whole process and for each individual file processed.
 
