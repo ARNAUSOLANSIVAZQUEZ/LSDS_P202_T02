@@ -10,7 +10,7 @@ Specs for U161668:
 -	CPU: 12th Gen Intel(R) Core(TM) i7-12700H , cpu MHz: 892.349, cpu cores: 14
 
         ____________________________________________________
-        |BENCHMARK - ENGLISH - U161668			                    |
+        |BENCHMARK - ENGLISH - U161668			     |
         |----------------------------------------------------|
         |Eurovision3.json || en || 24346 || 0 h 00 m 01 s    |
         |Eurovision4.json || en || 96430 || 0 h 00 m 04 s    |
@@ -24,7 +24,7 @@ Specs for U161668:
         |Total time elapsed Twitter Filtering:  0 h 02 m 40 s|
         |____________________________________________________|
          ____________________________________________________
-        |BENCHMARK - SPANISH - U161668			                    |
+        |BENCHMARK - SPANISH - U161668			     |
         |----------------------------------------------------|
         |Eurovision3.json || es || 23848 || 0 h 00 m 02 s    |
         |Eurovision4.json || es || 78433 || 0 h 00 m 04 s    |
@@ -38,7 +38,7 @@ Specs for U161668:
         |Total time elapsed Twitter Filtering:  0 h 03 m 53 s|
         |____________________________________________________|
          ____________________________________________________
-        |BENCHMARK - CATALAN - U161668			                    |
+        |BENCHMARK - CATALAN - U161668			     |
         |----------------------------------------------------|
         |Eurovision3.json || ca || 242 || 0 h 00 m 01 s      |
         |Eurovision4.json || ca || 983 || 0 h 00 m 05 s      |
