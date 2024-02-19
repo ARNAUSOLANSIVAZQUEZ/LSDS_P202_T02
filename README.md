@@ -116,7 +116,7 @@ Specs for U172951:
         |Eurovision9.json || en || 18048 || 0 h 00 m 02 s    |
         |Eurovision10.json || en || 115275 || 0 h 00 m 18 s  |
         |----------------------------------------------------|
-        |Total time elapsed Twitter Filtering:  0 h 02 m 40 s|
+        |Total time elapsed Twitter Filtering:  0 h 02 m 44 s|
         |____________________________________________________|
          ____________________________________________________
         |BENCHMARK - SPANISH - U172951			     |
@@ -130,7 +130,7 @@ Specs for U172951:
         |Eurovision9.json || es || 26244 || 0 h 00 m 02 s    |
         |Eurovision10.json || es || 169659 || 0 h 00 m 16 s  |
         |----------------------------------------------------|
-        |Total time elapsed Twitter Filtering:  0 h 03 m 53 s|
+        |Total time elapsed Twitter Filtering:  0 h 03 m 47 s|
         |____________________________________________________|
          ____________________________________________________
         |BENCHMARK - CATALAN - U172951			     |
@@ -144,6 +144,6 @@ Specs for U172951:
         |Eurovision9.json || ca || 193 || 0 h 00 m 01 s      |
         |Eurovision10.json || ca || 1065 || 0 h 00 m 13 s    |
         |----------------------------------------------------|
-        |Total time elapsed Twitter Filtering:  0 h 00 m 33 s|
+        |Total time elapsed Twitter Filtering:  0 h 00 m 48 s|
         |____________________________________________________|
 ```
