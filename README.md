@@ -100,8 +100,8 @@ Specs for U161668:
 ```
 
 Specs for U172951:
--	RAM: MemTotal: 
--	CPU:  , cpu MHz: , cpu cores: 
+-	RAM: MemTotal: 16GB
+-	CPU: 12th Gen Intel(R) Core(TM) i7-1255U , cpu MHz: 1700, cpu cores: 10
 
 ```
          ____________________________________________________
