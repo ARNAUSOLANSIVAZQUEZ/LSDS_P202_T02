@@ -3,8 +3,8 @@ This submission is for group P202-02 formed by:
 - Solans, Arnau U161668
 - Villarino, Jorge U172789
 
-# User's Manual
-## 2.1 
+# 2.1 
+## User's Manual
 To execute our submission, one must run the jar, with the json archives to be processed in the project directory, with the following commands:
 
 - To filter tweets in English:
