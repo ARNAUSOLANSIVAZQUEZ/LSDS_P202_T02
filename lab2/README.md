@@ -48,6 +48,7 @@ Benchmarks are done with the library java.time.LocalTime, the benchmark has been
 Specs for U161668:
 -	RAM: MemTotal: 32516032 kB ~ 31GB
 -	CPU: 12th Gen Intel(R) Core(TM) i7-12700H , cpu MHz: 892.349, cpu cores: 14
+  
 Benchmark:
 - English: 0 h 00 m 39 s
 - Spanish: 0 h 00 m 41 s
