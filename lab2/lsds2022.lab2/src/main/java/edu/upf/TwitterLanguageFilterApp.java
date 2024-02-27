@@ -19,6 +19,7 @@ public class TwitterLanguageFilterApp {
     public static void main( String[] args ) throws IOException {
         // Initialize Spark configuration and context
         SparkConf conf = new SparkConf().setAppName("Twitter Language Filter");
+        conf.set("spark.hadoop.validateOutputSpecs", "false");
         SparkContext scc = SparkContext.getOrCreate(conf);
         // Initialize Java Spark context to handle with Java
         JavaSparkContext sc = JavaSparkContext.fromSparkContext(scc);
@@ -28,7 +29,7 @@ public class TwitterLanguageFilterApp {
         List<String> argsList = Arrays.asList(args);
         String language = argsList.get(0);
         String outputFile = argsList.get(1);
-        outputFile = outputFile + "/filtered_" + language + "_tweets";
+
 
         System.out.println("Language: " + language + ". Output file: " + outputFile);
         // Retrieve tweets from input
@@ -39,7 +40,6 @@ public class TwitterLanguageFilterApp {
                 .filter(simplified-> simplified.isPresent())
                 .filter(present_tweet-> present_tweet.get().getLanguage().equals(language))
                 .map(filtered_tweet-> filtered_tweet.get());
-
 
         filtered.saveAsTextFile(outputFile);
         // Finalize timer
