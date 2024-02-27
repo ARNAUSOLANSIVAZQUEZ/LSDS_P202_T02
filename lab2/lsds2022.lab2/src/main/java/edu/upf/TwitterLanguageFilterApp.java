@@ -40,14 +40,17 @@ public class TwitterLanguageFilterApp {
                 .filter(simplified-> simplified.isPresent())
                 .filter(present_tweet-> present_tweet.get().getLanguage().equals(language))
                 .map(filtered_tweet-> filtered_tweet.get());
-
+        // Persist the filtered tweets
         filtered.saveAsTextFile(outputFile);
+        // Count the filtered tweets
+        long count = filtered.count();
         // Finalize timer
         LocalTime end = LocalTime.now();
         Duration elapsed = Duration.between(start, end);
         long secondsElapsed = elapsed.getSeconds();
         secondsElapsed = Math.abs(secondsElapsed);
-        System.out.println(String.format("\n Total time elapsed Twitter Filtering:  %d h %02d m %02d s" , secondsElapsed / 3600, (secondsElapsed % 3600) / 60, (secondsElapsed % 60)));
+        System.out.println("\nLanguage filtered: " + language+ " || Total tweets filtered: " + count);
+        System.out.println(String.format("\nTotal time elapsed Twitter Filtering:  %d h %02d m %02d s" , secondsElapsed / 3600, (secondsElapsed % 3600) / 60, (secondsElapsed % 60)));
 
     }
 }
