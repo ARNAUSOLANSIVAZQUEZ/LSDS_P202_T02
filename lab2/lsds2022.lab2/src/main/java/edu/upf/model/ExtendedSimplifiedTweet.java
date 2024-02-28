@@ -47,9 +47,22 @@ public class ExtendedSimplifiedTweet implements Serializable {
 
             // Check if all fields of tweet object are present
             if (tweet != null && tweet.id != 0 && tweet.text != null && tweet.user != null && tweet.user.id != 0
-                    && tweet.user.name != null && tweet.lang != null && tweet.timestamp_ms != 0) {
-                return Optional.of(new ExtendedSimplifiedTweet(tweet.id, tweet.text, tweet.user.id, tweet.user.name, tweet.lang,
-                        tweet.timestampMs));
+                    && tweet.user.name != null && tweet.user.followers_count != 0 && tweet.lang != null
+                    && tweet.retweeted_status != null && tweet.retweeted_status.user.id != 0
+                    && tweet.retweeted_status.id != 0 && tweet.timestamp_ms != 0) {
+                return Optional.of(
+                        new ExtendedSimplifiedTweet(
+                        tweet.id,
+                        tweet.text,
+                        tweet.user.id,
+                        tweet.user.name,
+                        tweet.user.followers_count,
+                        tweet.lang,
+                        true,
+                        tweet.retweeted_status.user.id,
+                        tweet.retweeted_status.id,
+                        tweet.timestamp_ms)
+                );
             } else {
                 return Optional.empty(); // Return empty optional if any mandatory field is missing
             }
@@ -64,6 +77,7 @@ public class ExtendedSimplifiedTweet implements Serializable {
         String text;
         ExtendedSimplifiedTweet.User user;
         String lang;
+        ExtendedSimplifiedTweet.retweetedStatus retweeted_status;
         long timestamp_ms;
     }
 
@@ -71,6 +85,12 @@ public class ExtendedSimplifiedTweet implements Serializable {
     private static class User {
         long id;
         String name;
+        long followers_count;
+    }
+    // JSON structure of retweet status
+    private static class retweetedStatus{
+        ExtendedSimplifiedTweet.User user;
+        long id;
     }
 
 
