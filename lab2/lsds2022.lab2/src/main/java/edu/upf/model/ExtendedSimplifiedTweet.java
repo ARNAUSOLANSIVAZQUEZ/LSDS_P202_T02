@@ -94,6 +94,37 @@ public class ExtendedSimplifiedTweet implements Serializable {
     }
 
 
+    // Getter methods
+    public long getTweetId() {
+        return tweetId;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+    public long getUserFollowersCount() {
+        return followersCount;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public boolean getIsRetweeted(){
+        return isRetweeted;
+    }
+
+    public long getTimestampMs() {
+        return timestampMs;
+    }
     @Override
     public String toString() {
         // Overriding how SimplifiedTweets are printed in console or the output file
