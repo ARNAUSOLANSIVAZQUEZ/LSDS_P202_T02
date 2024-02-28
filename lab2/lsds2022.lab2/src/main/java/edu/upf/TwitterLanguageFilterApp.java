@@ -1,7 +1,6 @@
 package edu.upf;
 
 import edu.upf.model.SimplifiedTweet;
-import edu.upf.uploader.S3Uploader;
 
 import org.apache.spark.SparkContext;
 import org.apache.spark.api.java.JavaSparkContext;
