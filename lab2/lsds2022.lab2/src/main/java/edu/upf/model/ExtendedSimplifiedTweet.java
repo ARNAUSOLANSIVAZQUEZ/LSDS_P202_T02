@@ -44,28 +44,37 @@ public class ExtendedSimplifiedTweet implements Serializable {
             // Parse JSON string into Tweet object with GSon
             Gson gson = new Gson();
             ExtendedSimplifiedTweet.Tweet tweet = gson.fromJson(jsonStr, ExtendedSimplifiedTweet.Tweet.class);
-
-            // Check if all fields of tweet object are present
-            if (tweet != null && tweet.id != 0 && tweet.text != null && tweet.user != null && tweet.user.id != 0
-                    && tweet.user.name != null && tweet.user.followers_count != 0 && tweet.lang != null
-                    && tweet.retweeted_status != null && tweet.retweeted_status.user.id != 0
-                    && tweet.retweeted_status.id != 0 && tweet.timestamp_ms != 0) {
-                return Optional.of(
-                        new ExtendedSimplifiedTweet(
-                        tweet.id,
-                        tweet.text,
-                        tweet.user.id,
-                        tweet.user.name,
-                        tweet.user.followers_count,
-                        tweet.lang,
-                        true,
-                        tweet.retweeted_status.user.id,
-                        tweet.retweeted_status.id,
-                        tweet.timestamp_ms)
-                );
-            } else {
-                return Optional.empty(); // Return empty optional if any mandatory field is missing
+            // Check if tweet is null before going further
+            if(tweet != null) {
+                boolean isRetweeted = false;
+                long retweet_tweet_id = 0;
+                long retweet_user_id = 0;
+                // Check necessary fields for a tweet
+                if(tweet.id != 0 && tweet.text != null &&
+                        tweet.user.id != 0 && tweet.user.name != null  &&
+                        tweet.lang != null  && tweet.timestamp_ms != 0){
+                    // Check if tweet is retweeted
+                    if(tweet.retweeted_status != null){
+                        isRetweeted = true;
+                        retweet_user_id = tweet.retweeted_status.user.id;
+                        retweet_tweet_id = tweet.retweeted_status.id;
+                    }
+                    return Optional.of(
+                            new ExtendedSimplifiedTweet(
+                                    tweet.id,
+                                    tweet.text,
+                                    tweet.user.id,
+                                    tweet.user.name,
+                                    tweet.user.followers_count,
+                                    tweet.lang,
+                                    isRetweeted,
+                                    retweet_user_id,
+                                    retweet_tweet_id,
+                                    tweet.timestamp_ms)
+                    );
+                }
             }
+            return Optional.empty(); // Return empty optional if any mandatory field is missing
         } catch (Exception e) {
             return Optional.empty();
         }
