@@ -57,11 +57,12 @@ public class BiGramsApp {
                 .mapToPair(f -> f.swap())
                 .sortByKey(false);
 
-        List<Tuple2<Integer, BiGram>> top =sorted_bigram.take(10);
+        // Retrieve top 10
+        List<Tuple2<Integer, BiGram>> top = sorted_bigram.take(10);
 
 
-        // Persist the bigram-frequency rdd
-        bigram_freq.saveAsTextFile(outputFile);
+        // Persist the sorted RDD
+        sorted_bigram.saveAsTextFile(outputFile);
         // Count total different bigrams
         long count = bigram_freq.count();
         // Finalize timer
