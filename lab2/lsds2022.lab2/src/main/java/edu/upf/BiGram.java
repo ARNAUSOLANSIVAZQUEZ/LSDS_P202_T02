@@ -20,10 +20,8 @@ public class BiGram implements Serializable {
     public static List<BiGram> fromExtendedSimplifiedTweet(ExtendedSimplifiedTweet tweet){
         List<BiGram> bigrams = new ArrayList<BiGram>();
         List<String> words = Arrays.stream(tweet.getText().split(" ")).map(BiGram::normalize).collect(Collectors.toList());
-        Iterator<String> e1 = words.iterator();
-        Iterator<String> e2 = words.subList(1, words.size()).iterator();
-        for (String first = e1.next(), last = e2.next(); e1.hasNext() && e2.hasNext(); first = e1.next(), last = e2.next()){
-            bigrams.add(new BiGram(first, last));
+        for(int i = 0; i < words.size() - 1; i++){
+            bigrams.add(new BiGram(words.get(i), words.get(i+1)));
         }
         return bigrams;
     }
@@ -40,7 +38,8 @@ public class BiGram implements Serializable {
             return (false);
         }
         BiGram bg = (BiGram) obj;
-        return (this.element1.equals(bg.element1) &&  this.element2.equals(bg.element2));
+        return ((this.element1.equals(bg.element1) &&  this.element2.equals(bg.element2))
+                ||(this.element2.equals(bg.element1) && this.element1.equals(bg.element2)));
     }
 
     @Override

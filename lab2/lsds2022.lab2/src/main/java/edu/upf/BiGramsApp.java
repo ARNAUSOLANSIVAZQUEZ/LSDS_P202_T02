@@ -12,11 +12,8 @@ import scala.Tuple2;
 import java.io.IOException;
 import java.time.Duration;
 import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class BiGramsApp {
     public static void main(String[] args) throws IOException {
@@ -44,16 +41,25 @@ public class BiGramsApp {
                 .map(present -> present.get())
                 .filter(mixed -> mixed.getLanguage().equals(language))
                 .filter(filtered -> !(filtered.getIsRetweeted()));
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\nCOMPLETED ORIGINALS\n\n\n\n\n\n");
+
         // Pipelining transformations to obtain tweets as bigrams
         JavaRDD<BiGram> bigrams = original
                 .flatMap(t -> BiGram.fromExtendedSimplifiedTweet(t).iterator());
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\nCOMPLETED BIGRAMS\n\n\n\n\n\n");
+
+
         // Pipelining transformations to obtain counts of bigrams
         JavaPairRDD<BiGram, Integer> bigram_freq = bigrams
                 .mapToPair(bigram -> new Tuple2<>(bigram, 1))
                 .reduceByKey((a,b) -> a+b);
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\nCOMPLETED BIGRAM COUNT\n\n\n\n\n\n");
+
+        // Sort bigrams
+        JavaPairRDD<Integer, BiGram> sorted_bigram = bigram_freq
+                .mapToPair(f -> f.swap())
+                .sortByKey(false);
+
+        List<Tuple2<Integer, BiGram>> top =sorted_bigram.take(10);
+
+
         // Persist the bigram-frequency rdd
         bigram_freq.saveAsTextFile(outputFile);
         // Count total different bigrams
@@ -64,6 +70,9 @@ public class BiGramsApp {
         long secondsElapsed = elapsed.getSeconds();
         secondsElapsed = Math.abs(secondsElapsed);
         System.out.println("\nLanguage filtered: " + language+ " || Total different BiGrams: " + count);
+        for(int i = 0; i < 10; i++){
+            System.out.println("\n Top " + (i+1) + " BiGram: " + top.get(i));
+        }
         System.out.println(String.format("\nTotal time elapsed retrieving BiGrams:  %d h %02d m %02d s" , secondsElapsed / 3600, (secondsElapsed % 3600) / 60, (secondsElapsed % 60)));
 
 

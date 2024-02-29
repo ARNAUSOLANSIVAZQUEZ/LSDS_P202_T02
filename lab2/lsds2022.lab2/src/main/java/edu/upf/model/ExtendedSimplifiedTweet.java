@@ -47,14 +47,14 @@ public class ExtendedSimplifiedTweet implements Serializable {
             // Check if tweet is null before going further
             if(tweet != null) {
                 boolean isRetweeted = false;
-                long retweet_tweet_id = 0;
-                long retweet_user_id = 0;
+                Long retweet_tweet_id = 0L;
+                Long retweet_user_id = 0L;
                 // Check necessary fields for a tweet
                 if(tweet.id != 0 && tweet.text != null &&
-                        tweet.user.id != 0 && tweet.user.name != null  &&
+                        tweet.user != null && tweet.user.id != 0 && tweet.user.name != null  &&
                         tweet.lang != null  && tweet.timestamp_ms != 0){
                     // Check if tweet is retweeted
-                    if(tweet.retweeted_status != null){
+                    if(tweet.retweeted){
                         isRetweeted = true;
                         retweet_user_id = tweet.retweeted_status.user.id;
                         retweet_tweet_id = tweet.retweeted_status.id;
@@ -87,6 +87,7 @@ public class ExtendedSimplifiedTweet implements Serializable {
         ExtendedSimplifiedTweet.User user;
         String lang;
         ExtendedSimplifiedTweet.retweetedStatus retweeted_status;
+        boolean retweeted;
         long timestamp_ms;
     }
 
