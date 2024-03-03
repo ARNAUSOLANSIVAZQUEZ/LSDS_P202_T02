@@ -98,9 +98,9 @@ Results obtained are:
 Benchmarks are done with the library java.time.LocalTime, the benchmark has been performed for the whole process using Spark locally.
 
 Benchmark:
-- English: 0 h 00 m 39 s
-- Spanish: 0 h 00 m 41 s
-- Catalan: 0 h 00 m 37 s
+- English:
+- Spanish:
+- Catalan:
 
 
 
