@@ -17,7 +17,7 @@ public class ExtendedSimplifiedTweet implements Serializable {
 
     public ExtendedSimplifiedTweet(long tweetId, String text, long userId, String userName,
                                    long followersCount, String language, boolean isRetweeted,
-                                   Long retweetedUserId, Long retweetedTweetId, long timestampMs) {
+                                   long retweetedUserId, long retweetedTweetId, long timestampMs) {
         // Initialize ExtendedSimplifiedTweet
         this.tweetId = tweetId;
         this.text = text;
@@ -54,7 +54,7 @@ public class ExtendedSimplifiedTweet implements Serializable {
                         tweet.user != null && tweet.user.id != 0 && tweet.user.name != null  &&
                         tweet.lang != null  && tweet.timestamp_ms != 0){
                     // Check if tweet is retweeted
-                    if(tweet.retweeted){
+                    if(tweet.retweeted_status != null){
                         isRetweeted = true;
                         retweet_user_id = tweet.retweeted_status.user.id;
                         retweet_tweet_id = tweet.retweeted_status.id;
@@ -87,7 +87,6 @@ public class ExtendedSimplifiedTweet implements Serializable {
         ExtendedSimplifiedTweet.User user;
         String lang;
         ExtendedSimplifiedTweet.retweetedStatus retweeted_status;
-        boolean retweeted;
         long timestamp_ms;
     }
 
@@ -130,6 +129,14 @@ public class ExtendedSimplifiedTweet implements Serializable {
 
     public boolean getIsRetweeted(){
         return isRetweeted;
+    }
+
+    public long getRetweetedUserId(){
+        return retweetedUserId;
+    }
+
+    public long getRetweetedTweetId(){
+        return retweetedTweetId;
     }
 
     public long getTimestampMs() {

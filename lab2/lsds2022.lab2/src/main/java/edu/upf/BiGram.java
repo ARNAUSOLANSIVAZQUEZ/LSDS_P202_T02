@@ -21,7 +21,9 @@ public class BiGram implements Serializable {
         List<BiGram> bigrams = new ArrayList<BiGram>();
         List<String> words = Arrays.stream(tweet.getText().split(" ")).map(BiGram::normalize).collect(Collectors.toList());
         for(int i = 0; i < words.size() - 1; i++){
-            bigrams.add(new BiGram(words.get(i), words.get(i+1)));
+            if(!words.get(i).isEmpty() && !words.get(i + 1).isEmpty()){
+                bigrams.add(new BiGram(words.get(i), words.get(i+1)));
+            }
         }
         return bigrams;
     }
