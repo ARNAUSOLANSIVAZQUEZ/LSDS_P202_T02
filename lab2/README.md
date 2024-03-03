@@ -3,7 +3,7 @@ This submission is for group P202-02 formed by:
 - Solans, Arnau U161668
 - Villarino, Jorge U172789
 
-# 2
+# Section 2
 ## User's Manual
 To execute our submission, one must run the jar, with the json archives to be processed in the project directory, with the following commands:
 
@@ -28,7 +28,6 @@ spark-submit --class edu.upf.TwitterLanguageFilterApp --master local[2] target/t
 
 ```
 spark-submit --class edu.upf.TwitterLanguageFilterApp --master local[2] target/twitter-filter-1.0-SNAPSHOT.jar <language> ./_output-folder/filtered_tweets_<language> <tweets directory path>
-
 ```
 
 
@@ -50,7 +49,7 @@ Benchmark:
 - Catalan: 0 h 00 m 37 s
   
 
-# 4 
+# Section 4 
 ## User's Manual
 To execute our submission, one must run the jar, with the json archives to be processed in the project directory, with the following commands:
 
@@ -75,7 +74,6 @@ spark-submit --class edu.upf.BiGramsApp --master local[2] target/twitter-filter-
 
 ```
 spark-submit --class edu.upf.BiGramsApp --master local[2] target/twitter-filter-1.0-SNAPSHOT.jar <language> ./_output-folder/bigrams_<language> <tweets directory path>
-
 ```
 
 
@@ -162,3 +160,90 @@ Benchmark:
 - English: 0 h 00 m 26 s
 - Spanish: 0 h 00 m 24 s
 - Catalan: 0 h 00 m 18 s
+
+
+# Section 5 
+## User's Manual
+To execute our submission, one must run the jar, with the json archives to be processed in the project directory, with the following commands:
+
+- To obtain most retweeted tweets of top 10 retweeted users:
+
+```
+spark-submit --class edu.upf.MostRetweetedApp --master local[2] target/twitter-filter-1.0-SNAPSHOT.jar ./_output-folder/most_retweeted ./tweets/twitter-data-from-2018-eurovision-final
+```
+
+### Results
+
+Results obtained are:
+
+#### Top 10 Retweeted users
+
+Top retweeted user: 1
+3143260474
+
+Top retweeted user: 2
+24679473
+
+Top retweeted user: 3
+15584187
+
+Top retweeted user: 4
+437025093
+
+Top retweeted user: 5
+39538010
+
+Top retweeted user: 6
+38381308
+
+Top retweeted user: 7
+739812492310896640
+
+Top retweeted user: 8
+1501434991
+
+Top retweeted user: 9
+29056256
+
+Top retweeted user: 10
+2754746065
+
+#### Most retweeted tweets for top 10 retweeted users
+
+Tweet: 1
+RT @ManelNMusic: Así que el año pasado quedo último con un gallo y este año gana una gallina... #Eurovision https://t.co/EfvXQbb8jp
+
+Tweet: 2
+RT @PaquitaSalas: Qué guasa tiene la niña, ¿eh? #Eurovision https://t.co/Iv1yottkvQ
+
+Tweet: 3
+RT @Uznare: eurovision rules https://t.co/I8cG3D5tCh
+
+Tweet: 4
+RT @auronplay: Muy bien Alemania secuestrando a Ed Sheeran y poniéndole una peluca. #Eurovision
+
+Tweet: 5
+RT @bbceurovision: See what he did there? #Eurovision #CzechRepublic  #CZE https://t.co/DwdfXmTqXg
+
+Tweet: 6
+RT @NetflixES: Ella está al mando. Con @PaquitaSalas nada malo puede pasar, ¿no? #Eurovision https://t.co/5HeUDCqxX6
+
+Tweet: 7
+RT @LVPibai: Rodolfo Chikilicuatre, un actor disfrazado con una guitarra de plástico quedó siete puestos por encima que la ganadora de un c…
+
+Tweet: 8
+RT @ManelNMusic: Oye Israel, que esto lo hice yo antes que tu... #Eurovision #FinalEurovision https://t.co/bBnDjB9s4z
+
+Tweet: 9
+RT @elmundotoday: Puigdemont ha logrado aparecerse durante unos segundos en el vestido de la participante de Estonia y ha proclamado la ind…
+
+Tweet: 10
+RT @Eurovision: The Winner of the 2018 #Eurovision Song Contest is ISRAEL! #ESC2018 #AllAboard https://t.co/Myre7yh3YV
+
+### Benchmark
+
+Benchmarks are done with the library java.time.LocalTime, the benchmark has been performed for the whole process using Spark locally.
+
+Benchmark: 0 h 00 m 52 s
+
+
