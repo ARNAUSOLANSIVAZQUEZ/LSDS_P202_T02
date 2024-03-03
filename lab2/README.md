@@ -49,6 +49,61 @@ Benchmark:
 - Catalan: 0 h 00 m 37 s
   
 
+# Section 3
+## User's Manual
+To execute our submission, one must run the jar, with the json archives to be processed in the project directory, with the following commands:
+
+- To filter tweets in English:
+
+```
+spark-submit options: --class edu.upf.TwitterLanguageFilterApp
+
+arguments: en ./output/benchmark/en ./input/tweets/twitter-data-from-2018-eurovision-final
+```
+
+- To filter tweets in Spanish:
+
+```
+spark-submit options: --class edu.upf.TwitterLanguageFilterApp
+
+arguments: es ./output/benchmark/es ./input/tweets/twitter-data-from-2018-eurovision-final
+```
+
+- To filter tweets in Catalan:
+
+```
+spark-submit options: --class edu.upf.TwitterLanguageFilterApp
+
+arguments: ca ./output/benchmark/ca ./input/tweets/twitter-data-from-2018-eurovision-final
+```
+- In general:
+
+```
+spark-submit options: --class edu.upf.TwitterLanguageFilterApp
+
+arguments: <language> ./output/benchmark/<language> ./input/tweets/twitter-data-from-2018-eurovision-final
+```
+
+
+### Results
+
+Results obtained are:
+- English: 446603 tweets filtered.
+- Spanish: 509435 tweets filtered
+- Catalan: 4583 tweets filtered.
+
+
+### Benchmark
+
+Benchmarks are done with the library java.time.LocalTime, the benchmark has been performed for the whole process using Spark locally.
+
+Benchmark:
+- English: 0 h 00 m 39 s
+- Spanish: 0 h 00 m 41 s
+- Catalan: 0 h 00 m 37 s
+
+
+
 # Section 4 
 ## User's Manual
 To execute our submission, one must run the jar, with the json archives to be processed in the project directory, with the following commands:
