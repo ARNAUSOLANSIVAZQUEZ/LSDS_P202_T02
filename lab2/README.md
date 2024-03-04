@@ -51,37 +51,45 @@ Benchmark:
 
 # Section 3
 ## User's Manual
-To execute our submission, one must run the jar, with the json archives to be processed in the project directory, with the following commands:
+To execute our submission, one must run a spark job in the emr cluster built as close as possible to the instructions provided in slides:
 
 - To filter tweets in English:
 
 ```
+jar location: s3://lsds2024.lab2.output.u161668.u172789.u172951/jars/twitter-filter-1.0-SNAPSHOT.jar
+
 spark-submit options: --class edu.upf.TwitterLanguageFilterApp
 
-arguments: en ./output/benchmark/en ./input/tweets/twitter-data-from-2018-eurovision-final
+arguments: en s3://lsds2024.lab2.output.u161668.u172789.u172951/output/benchmark/en s3://lsds2024.lab2.output.u161668.u172789.u172951/input/tweets/twitter-data-from-2018-eurovision-final
 ```
 
 - To filter tweets in Spanish:
 
 ```
+jar location: s3://lsds2024.lab2.output.u161668.u172789.u172951/jars/twitter-filter-1.0-SNAPSHOT.jar
+
 spark-submit options: --class edu.upf.TwitterLanguageFilterApp
 
-arguments: es ./output/benchmark/es ./input/tweets/twitter-data-from-2018-eurovision-final
+arguments: es s3://lsds2024.lab2.output.u161668.u172789.u172951/output/benchmark/es s3://lsds2024.lab2.output.u161668.u172789.u172951/input/tweets/twitter-data-from-2018-eurovision-final
 ```
 
 - To filter tweets in Catalan:
 
 ```
+jar location: s3://lsds2024.lab2.output.u161668.u172789.u172951/jars/twitter-filter-1.0-SNAPSHOT.jar
+
 spark-submit options: --class edu.upf.TwitterLanguageFilterApp
 
-arguments: ca ./output/benchmark/ca ./input/tweets/twitter-data-from-2018-eurovision-final
+arguments: ca s3://lsds2024.lab2.output.u161668.u172789.u172951/output/benchmark/ca s3://lsds2024.lab2.output.u161668.u172789.u172951/input/tweets/twitter-data-from-2018-eurovision-final
 ```
 - In general:
 
 ```
+jar location: <bucket path>/jars/twitter-filter-1.0-SNAPSHOT.jar
+
 spark-submit options: --class edu.upf.TwitterLanguageFilterApp
 
-arguments: <language> ./output/benchmark/<language> ./input/tweets/twitter-data-from-2018-eurovision-final
+arguments: <language> <bucket path>/output/benchmark/<language> <bucket path>/input/tweets/twitter-data-from-2018-eurovision-final
 ```
 
 
@@ -95,7 +103,7 @@ Results obtained are:
 
 ### Benchmark
 
-Benchmarks are done with the library java.time.LocalTime, the benchmark has been performed for the whole process using Spark locally.
+Benchmarks are done with the metrics provided by EMR.
 
 Benchmark:
 - English:
