@@ -103,12 +103,12 @@ Results obtained are:
 
 ### Benchmark
 
-Benchmarks are done with the metrics provided by EMR.
+Benchmarks are done with the metrics provided by EMR. (Time elapsed in each step)
 
 Benchmark:
-- English:
-- Spanish:
-- Catalan:
+- English: 11 minutes, 36 seconds
+- Spanish: 12 minutes, 56 seconds
+- Catalan: 10 minutes, 54 seconds
 
 
 
