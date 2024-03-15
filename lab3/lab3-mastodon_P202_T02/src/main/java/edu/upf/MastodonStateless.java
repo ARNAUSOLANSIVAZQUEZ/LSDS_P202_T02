@@ -27,7 +27,8 @@ public class MastodonStateless {
                 SparkConf conf = new SparkConf().setAppName("Real-time Twitter Stateless Exercise");
                 AppConfig appConfig = AppConfig.getConfig();
 
-                StreamingContext sc = new StreamingContext(conf, Durations.seconds(10));
+                StreamingContext sc = new StreamingContext(conf, Durations.seconds(20)); 
+                // With an interval of 20 seconds, we want to display the number of tweets for each language 
                 JavaStreamingContext jsc = new JavaStreamingContext(sc);
                 jsc.checkpoint("/tmp/checkpoint");
 
