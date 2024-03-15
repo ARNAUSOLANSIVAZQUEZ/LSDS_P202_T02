@@ -1,3 +1,4 @@
+edu/upf/MastodonWindows$2.class
 edu/upf/MastodonWindowExample.class
 edu/upf/storage/IHashtagRepository.class
 com/github/tukaaa/model/SimplifiedTweetWithHashtags.class
@@ -15,4 +16,5 @@ edu/upf/MastodonHashtags.class
 edu/upf/MastodonWithState.class
 com/github/tukaaa/MastodonDStreamReceiver.class
 edu/upf/MastodonWindows.class
+edu/upf/MastodonWindows$1.class
 edu/upf/model/HashTagCountComparator.class
