@@ -7,7 +7,9 @@ edu/upf/model/HashTagCount.class
 com/github/tukaaa/adapter/SimplifiedTweetAdapter.class
 edu/upf/MastodonStreamingExample.class
 edu/upf/MastodonStateless$1.class
+edu/upf/MastodonWithState$2.class
 com/github/tukaaa/MastodonDStream.class
+edu/upf/MastodonWithState$1.class
 edu/upf/MastodonStateless.class
 com/github/tukaaa/config/AppConfig.class
 edu/upf/util/LanguageMapUtils.class
