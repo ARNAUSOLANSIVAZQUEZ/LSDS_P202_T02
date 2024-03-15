@@ -1,0 +1,17 @@
+/mnt/c/users/hipma/Documents/Github/LSDS_P202_T02/lab3/lab3-mastodon_P202_T02/src/main/java/edu/upf/storage/DynamoHashTagRepository.java
+/mnt/c/users/hipma/Documents/Github/LSDS_P202_T02/lab3/lab3-mastodon_P202_T02/src/main/java/edu/upf/MastodonStateless.java
+/mnt/c/users/hipma/Documents/Github/LSDS_P202_T02/lab3/lab3-mastodon_P202_T02/src/main/java/edu/upf/model/HashTagCountComparator.java
+/mnt/c/users/hipma/Documents/Github/LSDS_P202_T02/lab3/lab3-mastodon_P202_T02/src/main/java/com/github/tukaaa/model/SimplifiedTweetWithHashtags.java
+/mnt/c/users/hipma/Documents/Github/LSDS_P202_T02/lab3/lab3-mastodon_P202_T02/src/main/java/com/github/tukaaa/config/AppConfig.java
+/mnt/c/users/hipma/Documents/Github/LSDS_P202_T02/lab3/lab3-mastodon_P202_T02/src/main/java/edu/upf/MastodonWindowExample.java
+/mnt/c/users/hipma/Documents/Github/LSDS_P202_T02/lab3/lab3-mastodon_P202_T02/src/main/java/edu/upf/model/HashTagCount.java
+/mnt/c/users/hipma/Documents/Github/LSDS_P202_T02/lab3/lab3-mastodon_P202_T02/src/main/java/edu/upf/util/LanguageMapUtils.java
+/mnt/c/users/hipma/Documents/Github/LSDS_P202_T02/lab3/lab3-mastodon_P202_T02/src/main/java/edu/upf/storage/IHashtagRepository.java
+/mnt/c/users/hipma/Documents/Github/LSDS_P202_T02/lab3/lab3-mastodon_P202_T02/src/main/java/com/github/tukaaa/adapter/SimplifiedTweetAdapter.java
+/mnt/c/users/hipma/Documents/Github/LSDS_P202_T02/lab3/lab3-mastodon_P202_T02/src/main/java/edu/upf/MastodonHashtags.java
+/mnt/c/users/hipma/Documents/Github/LSDS_P202_T02/lab3/lab3-mastodon_P202_T02/src/main/java/edu/upf/MastodonWithState.java
+/mnt/c/users/hipma/Documents/Github/LSDS_P202_T02/lab3/lab3-mastodon_P202_T02/src/main/java/edu/upf/model/HashTag.java
+/mnt/c/users/hipma/Documents/Github/LSDS_P202_T02/lab3/lab3-mastodon_P202_T02/src/main/java/edu/upf/MastodonStreamingExample.java
+/mnt/c/users/hipma/Documents/Github/LSDS_P202_T02/lab3/lab3-mastodon_P202_T02/src/main/java/edu/upf/MastodonWindows.java
+/mnt/c/users/hipma/Documents/Github/LSDS_P202_T02/lab3/lab3-mastodon_P202_T02/src/main/java/com/github/tukaaa/MastodonDStreamReceiver.java
+/mnt/c/users/hipma/Documents/Github/LSDS_P202_T02/lab3/lab3-mastodon_P202_T02/src/main/java/com/github/tukaaa/MastodonDStream.java
